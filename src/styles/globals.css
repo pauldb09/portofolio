@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #101111;
+    border-radius: 16px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color:  #fff;
+    border-radius: 4px;
+    border: 3px solid #fff;
+  }
+  
+    html,
+    body {
+        @apply scroll-smooth scroll-pt-12;
+    }
+
+    * {
+        @apply !box-border;
+    }
+}
+
+@layer components {
+    .container {
+        @apply relative mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-screen-xl 3xl:max-w-screen-2xl;
+    }
+}
+
+@layer utilities {
+    .animate-wave {
+        animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+        animation-duration: 2.5s; /* Change to speed up or slow down */
+        animation-iteration-count: infinite; /* Never stop waving :) */
+    }
+
+    @keyframes wave-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        10% {
+            transform: rotate(14deg);
+        } /* The following five values can be played with to make the waving more or less extreme */
+        20% {
+            transform: rotate(-8deg);
+        }
+        30% {
+            transform: rotate(14deg);
+        }
+        40% {
+            transform: rotate(-4deg);
+        }
+        50% {
+            transform: rotate(10deg);
+        }
+        60% {
+            transform: rotate(0deg);
+        } /* Reset for the last half to pause */
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}

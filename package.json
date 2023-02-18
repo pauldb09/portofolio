@@ -1,0 +1,80 @@
+{
+    "name": "portofolio",
+    "version": "1.1.0",
+    "description": "My portofolio",
+    "main": "index.js",
+    "repository": "https://github.com/raflymln/nextjs-template.git",
+    "bugs": "https://github.com/raflymln/nextjs-template",
+    "author": {
+        "name": "Pauldb09",
+        "email": "mraflymaulana@gmail.com",
+        "url": "https://raflymaulana.me"
+    },
+    "homepage": "https://raflymaulana.me",
+    "license": "MIT",
+    "private": true,
+    "contributors": [],
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start -p 80",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@headlessui/react": "^1.7.11",
+        "@heroicons/react": "^2.0.16",
+        "@heroicons/vue": "^2.0.16",
+        "@prisma/client": "^3.15.2",
+        "chart.js": "^4.2.1",
+        "next": "^13.0.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.45",
+        "@types/react": "^17.0.52",
+        "autoprefixer": "^10.4.13",
+        "eslint": "^8.27.0",
+        "eslint-config-next": "^13.0.3",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "postcss": "^8.4.19",
+        "prettier": "^2.7.1",
+        "prisma": "^3.15.2",
+        "tailwindcss": "^3.2.3",
+        "typescript": "^4.8.4"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "endOfLine": "auto",
+        "htmlWhitespaceSensitivity": "css",
+        "bracketSameLine": false,
+        "jsxSingleQuote": false,
+        "printWidth": 200,
+        "semi": true,
+        "tabWidth": 4
+    },
+    "eslintConfig": {
+        "plugins": [
+            "prettier"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "next/core-web-vitals",
+            "prettier"
+        ],
+        "rules": {
+            "no-case-declarations": "off",
+            "no-empty-function": "off",
+            "prefer-const": "off",
+            "prettier/prettier": "error",
+            "@next/next/no-img-element": "off",
+            "react/no-unescaped-entities": "off"
+        },
+        "globals": {
+            "JSX": true
+        }
+    }
+}
