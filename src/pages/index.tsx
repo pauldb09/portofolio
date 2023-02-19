@@ -110,7 +110,7 @@ export default function Example() {
 
                             <div className="relative mt-16 h-80 lg:mt-8">
                                 <img
-                                    className="overflow-hidden animate-bounce1 hover:cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                                    className="md:animate-bounce1 sd:animate-bounce1 overflow-hidden  hover:cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
                                     src="/images/hero.png"
                                     alt="App screenshot"
                                     width={1524}
