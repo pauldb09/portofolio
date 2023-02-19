@@ -4,6 +4,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method !== "POST") {
         return res.status(405).send("Method Not Allowed");
     }
-
-    return res.status(200).send("OK");
+    const { ipAdress, userAgent } = req.body;
+    if (!ipAdreess || !userAgent) return res.status(200).send("OK");
 }
