@@ -1,4 +1,4 @@
-import { DecoratedText } from "@/components/DeoratedLink";
+import { DecoratedText } from "@/components/DecoratedLink";
 import { useEffect, useState } from "react";
 
 const words = ["Hey", "Hello", "Bonjour", "Buongiorno", "Guten Tag"];
@@ -173,21 +173,13 @@ export default function Example() {
                             <div className="flex flex-col items-start">
                                 <dt className="mt-4 font-semibold text-white">E-mail</dt>
                                 <dd className="mt-2 leading-7 text-gray">
-                                    You can{" "}
-                                    <a href="mailto:pro@pauldb09.dev&subject=Hi">
-                                        <DecoratedText word={"send me a mail"}></DecoratedText>
-                                    </a>{" "}
-                                    and I'll answer you!
+                                    You can <DecoratedText word={"send me a mail"} link={"mailto:pro@pauldb09.dev&subject=Hi"}></DecoratedText> and I'll answer you!
                                 </dd>
                             </div>
                             <div className="flex flex-col items-start">
                                 <dt className="mt-4 font-semibold text-white">Discord</dt>
                                 <dd className="mt-2 leading-7 text-gray">
-                                    You can also reach me on discord{" "}
-                                    <a href="https://discord.com/users/688402229245509844">
-                                        <DecoratedText word={"here"}></DecoratedText>
-                                    </a>{" "}
-                                    .
+                                    You can also reach me on discord <DecoratedText word={"here"} link={"https://discord.com/users/688402229245509844"}></DecoratedText>.
                                 </dd>
                             </div>
                         </dl>

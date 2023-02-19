@@ -1,4 +1,4 @@
-import { DecoratedText } from "@/components/DeoratedLink";
+import { DecoratedText } from "@/components/DecoratedLink";
 import { useEffect, useState } from "react";
 
 const words = ["Uhh", "Well", "??!", "👀👀"];
