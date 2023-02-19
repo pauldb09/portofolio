@@ -45,7 +45,7 @@ export default function Example() {
                                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                     {currentWord}
                                     <br />
-                                    You are <DecoratedText word={"lost"}></DecoratedText>
+                                    You are <DecoratedText link={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"} word={"lost"}></DecoratedText>
                                 </h2>
                                 <p className="mt-6 text-lg leading-8 text-gray">This is a wild and dangerous place to be</p>
                             </div>
