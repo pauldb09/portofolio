@@ -1,6 +1,5 @@
 import { DecoratedText } from "@/components/DeoratedLink";
 import { useEffect, useState } from "react";
-import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
 
 const words = ["Hey", "Hello", "Bonjour", "Buongiorno", "Guten Tag"];
 const products = [
@@ -9,7 +8,7 @@ const products = [
         name: "Green-bot",
         href: "https://green-bot.app",
         imageSrc: "/images/greenbot.png",
-        imageAlt: "Front of men's Basic Tee in black.",
+        imageAlt: "image",
         tech: "Typescript, MongoDB, NextJS, Kotlin, Java",
         desc: "I founded Green-bot back in 2020 as a hobby and now it's a company serving more than 30 millions users wroldwide on the social netword Discord™ ",
     },
@@ -18,7 +17,7 @@ const products = [
         name: "Social Manager",
         href: "https://github.com/pauldb09/Social-Manager",
         imageSrc: "/images/socialmanager.png",
-        imageAlt: "Front of men's Basic Tee in black.",
+        imageAlt: "image",
         desc: "Another discord that sends messages when a new youtube video/tweet/tiktok is posted. Also helped to moderate online communities ( Some of the biggest). Stopped due to lack of time",
         tech: "Typescript, MongoDB",
     },
@@ -26,7 +25,7 @@ const products = [
         id: 1,
         name: "Tutos Du Web",
         href: "https://github.com/pauldb09/tutos-du-web",
-        imageAlt: "Front of men's Basic Tee in black.",
+        imageAlt: "image",
 
         imageSrc: "/images/tdw.png",
         desc: "A very complete website for coding tutorials, with account creating and ability to write tutorials. Used to have 200 tutorials written by the community and more than 1000 registred users. ",
@@ -37,7 +36,7 @@ const products = [
         id: 1,
         name: "Github Projects",
         href: "https://github.com/pauldb09",
-        imageAlt: "Front of men's Basic Tee in black.",
+        imageAlt: "image",
 
         imageSrc: "/images/github-octocat.png",
         desc: "I've also made several open source projects or scripts on my github profile",
@@ -53,14 +52,12 @@ export default function Example() {
     useEffect(() => {
         if (appLoaded) return;
         appLoaded = true;
-        const words = ["Hey", "Hello", "Bonjour", "Buongiorno", "Guten Tag"];
-
-        setInterval(() => {
+        let interval = setInterval(() => {
             const newWord = words.filter((word) => word !== currentWord)[Math.floor(Math.random() * (words.length - 1))];
             setCurrentWord(newWord);
         }, 3500);
         let ready_date = Date.now();
-        console.log(`Client-Side application loaded in ${ready_date - open_date}ms\nApp Loaded: ${appLoaded}`);
+        console.log(`Client-Side application loaded in ${ready_date - open_date}ms\nApp Loaded: ${appLoaded}\nInterval: ${interval}`);
     }, [open_date, currentWord]);
 
     return (
@@ -114,7 +111,7 @@ export default function Example() {
                             <div className="relative mt-16 h-80 lg:mt-8">
                                 <img
                                     className="overflow-hidden animate-bounce1 hover:cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                                    src="https://cdn.discordapp.com/attachments/909506825576128562/1076791351301111848/image.png"
+                                    src="/images/hero.png"
                                     alt="App screenshot"
                                     width={1524}
                                     height={880}

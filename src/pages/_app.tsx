@@ -3,20 +3,20 @@ import type { AppProps } from "next/app";
 import MetaTags from "@/components/Sections/MetaTags";
 
 const metaData = {
-    title: "Pauldb09 - Developer",
-    description: "Im' not sure what this is for :)",
-    url: "https://www.pauldb09.dev.com",
-    image: "https://www.pauldb09.com/pdp.jpg",
-    themeColor: "#ffffff",
+    title: "Pauldb09 - Portofolio",
+    description: "👀👀🤔🤔🤔",
+    url: "https://www.pauldb09.dev",
+    image: "https://www.pauldb09.dev/avatar.gif",
+    themeColor: "#15ADE2",
     keywords: "key1, key2, key3, key4, key5, key6",
     author: "Pauldb09",
     charSet: "utf-8",
     language: "English",
     icons: [
         {
-            src: "/images/favicon.ico",
+            src: "/images/avatar.png",
             sizes: "32x32",
-            type: "image/ico",
+            type: "image/png",
         },
     ],
 };
