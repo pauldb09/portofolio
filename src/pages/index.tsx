@@ -10,7 +10,7 @@ const products = [
         imageSrc: "/images/greenbot.png",
         imageAlt: "image",
         tech: "Typescript, MongoDB, NextJS, Kotlin, Java",
-        desc: "I founded Green-bot back in 2020 as a hobby and now it's a company serving more than 30 millions users wroldwide on the social netword Discord™ ",
+        desc: "I founded Green-bot back in 2020 as a hobby and now it's a company serving more than 30 millions users worldwide on the social netword Discord™ ",
     },
     {
         id: 1,
@@ -28,7 +28,7 @@ const products = [
         imageAlt: "image",
 
         imageSrc: "/images/tdw.png",
-        desc: "A very complete website for coding tutorials, with account creating and ability to write tutorials. Used to have 200 tutorials written by the community and more than 1000 registred users. ",
+        desc: "A very complete website for coding tutorials, with account creation and ability to write tutorials. Used to have 200 tutorials written by the community and more than 1000 registred users. ",
         tech: "PHP, SQL, Html, Css, VanillaJS, Bootstrap",
     },
 
