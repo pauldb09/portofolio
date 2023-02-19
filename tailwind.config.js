@@ -15,14 +15,19 @@ module.exports = {
             red: "#87200A",
             white: "#fff",
             green: "#2C5D06",
+            gray: "#BCBCBC",
             yellow: "#D4B733",
-            blue: "#051430eb",
+            blue: "#15ADE2",
             black1: "#1a1919eb",
             black2: "#000000eb",
             black3: "#201e1eeb",
         },
         fontFamily: {},
-        extend: {},
+        extend: {
+            animation: {
+                bounce1: "bounce 6s infinite",
+            },
+        },
     },
     variants: {
         extend: {
@@ -31,5 +36,8 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        // ...
+        require("@tailwindcss/aspect-ratio"),
+    ],
 };
