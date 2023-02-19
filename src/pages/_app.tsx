@@ -14,7 +14,7 @@ const metaData = {
     language: "English",
     icons: [
         {
-            src: "/images/avatar.png",
+            src: "https://avatars.githubusercontent.com/u/70904183?v=4",
             sizes: "32x32",
             type: "image/png",
         },

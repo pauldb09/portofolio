@@ -57,7 +57,7 @@ export default function Example() {
             setCurrentWord(newWord);
         }, 3500);
         let ready_date = Date.now();
-        console.log(`Client-Side application loaded in ${ready_date - open_date}ms\nApp Loaded: ${appLoaded}\nInterval: ${interval}`);
+        console.log(`[App Ready] Client-Side application loaded in ${ready_date - open_date}ms\nApp Loaded: ${appLoaded}\nInterval: ${interval}\n\n`);
     }, [open_date, currentWord]);
 
     return (
@@ -84,7 +84,7 @@ export default function Example() {
                                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                     {currentWord},
                                     <br />
-                                    I'm <DecoratedText word={"Pauldb09"}></DecoratedText>
+                                    I'm <DecoratedText link={"https://github.com/pauldb09"} word={"Pauldb09"}></DecoratedText>
                                 </h2>
                                 <p className="mt-6 text-lg leading-8 text-gray">I'm a backend developer from France 👌</p>
                                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
