@@ -5,7 +5,6 @@ import { words, projects, stats, socialsLinks } from "@/lib/data";
 import { setupApp } from "@/lib/functions";
 
 let appLoaded = false;
-
 export default function Example() {
     const [currentWord, setCurrentWord]: any = useState(words[0]);
 
@@ -166,6 +165,10 @@ export default function Example() {
                                     </div>
                                 ))}
                             </div>
+                            <br></br>
+                            <p className="text-gray">
+                                © {new Date().getFullYear()} Developed by <DecoratedText word={"Pauldb09"}></DecoratedText>
+                            </p>
                         </div>
                         <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                             <div className="flex flex-col items-start">

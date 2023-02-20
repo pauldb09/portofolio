@@ -6,15 +6,16 @@ export const stats = [
 
 export const socialsLinks = [
     {
-        id: 1,
-        link: "https://twitter.com/pauldb_09",
-        image: "/images/twitter.png",
-    },
-    {
         id: 2,
         link: "https://github.com/pauldb09",
         image: "/images/github.png",
     },
+    {
+        id: 1,
+        link: "https://twitter.com/pauldb_09",
+        image: "/images/twitter.png",
+    },
+
     {
         id: 3,
         link: "https://discord.com/users/688402229245509844",
