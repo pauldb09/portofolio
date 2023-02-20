@@ -1,1 +1,1 @@
-export { ucWords } from "./ucWords";
+export { setupApp } from "./setupApp";

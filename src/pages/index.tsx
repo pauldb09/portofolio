@@ -1,64 +1,19 @@
 import { DecoratedText } from "@/components/DecoratedLink";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { words, projects, stats, socialsLinks } from "@/lib/data";
+import { setupApp } from "@/lib/functions";
 
-const words = ["Hey", "Hello", "Bonjour", "Buongiorno", "Guten Tag"];
-const products = [
-    {
-        id: 1,
-        name: "Green-bot",
-        href: "https://green-bot.app",
-        imageSrc: "/images/greenbot.png",
-        imageAlt: "image",
-        tech: "Typescript, MongoDB, NextJS, Kotlin, Java",
-        desc: "I founded Green-bot back in 2020 as a hobby and now it's a company serving more than 30 millions users worldwide on the social netword Discord™ ",
-    },
-    {
-        id: 1,
-        name: "Social Manager",
-        href: "https://github.com/pauldb09/Social-Manager",
-        imageSrc: "/images/socialmanager.png",
-        imageAlt: "image",
-        desc: "Another discord that sends messages when a new youtube video/tweet/tiktok is posted. Also helped to moderate online communities ( Some of the biggest). Stopped due to lack of time",
-        tech: "Typescript, MongoDB",
-    },
-    {
-        id: 1,
-        name: "Tutos Du Web",
-        href: "https://github.com/pauldb09/tutos-du-web",
-        imageAlt: "image",
-
-        imageSrc: "/images/tdw.png",
-        desc: "A very complete website for coding tutorials, with account creation and ability to write tutorials. Used to have 200 tutorials written by the community and more than 1000 registred users. ",
-        tech: "PHP, SQL, Html, Css, VanillaJS, Bootstrap",
-    },
-
-    {
-        id: 1,
-        name: "Github Projects",
-        href: "https://github.com/pauldb09",
-        imageAlt: "image",
-
-        imageSrc: "/images/github-octocat.png",
-        desc: "I've also made several open source projects or scripts on my github profile",
-        tech: "Javascript, Typescript, ExpressJS, mongoDB",
-    },
-];
 let appLoaded = false;
-export default function Example() {
-    let open_date = Date.now();
 
+export default function Example() {
     const [currentWord, setCurrentWord]: any = useState(words[0]);
 
     useEffect(() => {
         if (appLoaded) return;
         appLoaded = true;
-        let interval = setInterval(() => {
-            const newWord = words.filter((word) => word !== currentWord)[Math.floor(Math.random() * (words.length - 1))];
-            setCurrentWord(newWord);
-        }, 3500);
-        let ready_date = Date.now();
-        console.log(`[App Ready] Client-Side application loaded in ${ready_date - open_date}ms\nApp Loaded: ${appLoaded}\nInterval: ${interval}\n\n`);
-    }, [open_date, currentWord]);
+        setupApp(words, currentWord, setCurrentWord);
+    }, [currentWord]);
 
     return (
         <main className="bg-black">
@@ -86,9 +41,23 @@ export default function Example() {
                                     <br />
                                     I'm <DecoratedText link={"https://github.com/pauldb09"} word={"Pauldb09"}></DecoratedText>
                                 </h2>
-                                <p className="mt-6 text-lg leading-8 text-gray">I'm a backend developer from France 👌</p>
+                                <p className="mt-6 text-lg leading-8 text-gray">I'm a fullstack developer from France ✌️</p>
+                                <br></br>
+                                <div className="place-self-center flex -space-x-2 justify-center md:justify-start">
+                                    {socialsLinks.map((social) => (
+                                        <div key={social.id}>
+                                            <Link href={social.link}>
+                                                <img
+                                                    className="hover:cursor-pointer  transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 inline-block inline-block h-12 w-12 rounded-full "
+                                                    src={social.image}
+                                                    alt=""
+                                                />
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
                                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                                    <a href="#about" className="text-base font-semibold leading-7 text-white">
+                                    <a href="#stats" className="text-base font-semibold leading-7 text-white">
                                         <span aria-hidden="true">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -127,33 +96,48 @@ export default function Example() {
                     <path fill="#1a1919eb" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
                 </svg>
             </div>
-            <div className="bg-black1">
+            <div className="bg-black1 py-24 sm:py-32" id="stats">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <dl className="grid grid-cols-1 gap-y-16 gap-x-8 text-center lg:grid-cols-3">
+                        {stats.map((stat) => (
+                            <div
+                                key={stat.id}
+                                className="hover:cursor-pointer flex flex-col-reverse transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 mx-auto flex max-w-xs flex-col gap-y-4"
+                            >
+                                <dt className="text-base leading-7 text-gray">{stat.name}</dt>
+                                <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">{stat.value}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
+            </div>
+            <div className="bg-black">
                 <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8" id="about">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         I've worked on <DecoratedText word={"10+"}></DecoratedText> projects since <DecoratedText word={"2020"}></DecoratedText>
                     </h2>
                     <br></br>
                     <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                        {products.map((product) => (
+                        {projects.map((project) => (
                             <div
-                                key={product.id}
+                                key={project.id}
                                 className="group relative transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none hover:cursor-pointer"
                             >
                                 <div className="min-h-40 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                                    <img src={product.imageSrc} alt={product.imageAlt} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                                    <img src={project.imageSrc} alt={project.imageAlt} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
                                 </div>
                                 <div className="mt-4 flex justify-between hover:bg-black3 bg-black2 px-2 py-2 rounded-lg mt-1">
                                     <div>
                                         <h2 className="text-2xl text-white">
-                                            <a href={product.href}>
+                                            <a href={project.href}>
                                                 <span aria-hidden="true" className="absolute inset-0" />
-                                                {product.name}
+                                                {project.name}
                                             </a>
                                             <br></br>
                                         </h2>
                                         <p className=" text-sm text-gray">
-                                            {product.desc} <br></br> <br></br>
-                                            Tech: {product.tech}
+                                            {project.desc} <br></br> <br></br>
+                                            Tech: {project.tech}
                                         </p>
                                     </div>
                                 </div>
@@ -167,7 +151,21 @@ export default function Example() {
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 lg:max-w-none lg:grid-cols-2">
                         <div className="max-w-xl lg:max-w-lg">
                             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Get in Touch.</h2>
-                            <p className="mt-4 text-lg leading-8 text-gray">I'm always open to new opportunities! Feel free to get in touch wiht me!</p>
+                            <p className="mt-4 text-lg leading-8 text-gray">I'm always open to new opportunities! Feel free to get in touch with me!</p>
+                            <br></br>
+                            <div className="flex -space-x-2 ">
+                                {socialsLinks.map((social) => (
+                                    <div key={social.id}>
+                                        <Link href={social.link}>
+                                            <img
+                                                className="hover:cursor-pointer  transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 inline-block inline-block h-12 w-12 rounded-full "
+                                                src={social.image}
+                                                alt=""
+                                            />
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                             <div className="flex flex-col items-start">
