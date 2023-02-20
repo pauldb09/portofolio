@@ -17,7 +17,9 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start -p 80 .env",
+        "start": "next start -p 3000",
+        "deploy": "next build && pm2 start npm --name pauldb09.dev -- run start",
+        "refresh": "next build && pm2 restart pauldb09.dev",
         "lint": "next lint"
     },
     "dependencies": {
