@@ -3,14 +3,14 @@
     "version": "1.1.0",
     "description": "My portofolio",
     "main": "index.js",
-    "repository": "https://github.com/raflymln/nextjs-template.git",
-    "bugs": "https://github.com/raflymln/nextjs-template",
+    "repository": "https://github.com/pauldb09/portofolio.git",
+    "bugs": "https://github.com/pauldb09/portofolio",
     "author": {
         "name": "Pauldb09",
-        "email": "mraflymaulana@gmail.com",
-        "url": "https://raflymaulana.me"
+        "email": "pro@pauldb09.dev",
+        "url": "https://pauldb09.dev"
     },
-    "homepage": "https://raflymaulana.me",
+    "homepage": "https://pauldb09.dev",
     "license": "MIT",
     "private": true,
     "contributors": [],
