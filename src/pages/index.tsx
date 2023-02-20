@@ -47,7 +47,7 @@ export default function Example() {
                                         <div key={social.id}>
                                             <Link href={social.link}>
                                                 <img
-                                                    className="hover:cursor-pointer  transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 inline-block inline-block h-12 w-12 rounded-full "
+                                                    className="hover:cursor-pointer  transition ease-in-out delay-0 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 inline-block inline-block h-12 w-12 rounded-full "
                                                     src={social.image}
                                                     alt=""
                                                 />
@@ -101,7 +101,7 @@ export default function Example() {
                         {stats.map((stat) => (
                             <div
                                 key={stat.id}
-                                className="hover:cursor-pointer flex flex-col-reverse transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 mx-auto flex max-w-xs flex-col gap-y-4"
+                                className="hover:cursor-pointer flex flex-col-reverse transition ease-in-out  bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 mx-auto flex max-w-xs flex-col gap-y-4"
                             >
                                 <dt className="text-base leading-7 text-gray">{stat.name}</dt>
                                 <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">{stat.value}</dd>
