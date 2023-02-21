@@ -1,7 +1,7 @@
 export const stats = [
     { id: 1, name: "Years of experience", value: "3" },
     { id: 2, name: "Users using my creations", value: "30 Million +" },
-    { id: 3, name: "Time spent coding last year", value: "200 hours" },
+    { id: 3, name: "Time spent coding last year", value: "400 hours" },
 ];
 
 export const socialsLinks = [
@@ -36,7 +36,7 @@ export const projects = [
         imageSrc: "/images/greenbot.png",
         imageAlt: "image",
         tech: "Typescript, MongoDB, NextJS, Kotlin, Java",
-        desc: "I founded Green-bot back in 2020 as a hobby and now it's a company serving more than 30 millions users worldwide on the social netword Discord™ ",
+        desc: "I founded Green-bot back in 2020 as a hobby and now it's serving more than 30 millions users worldwide on 500,000 separate discord communities!",
     },
     {
         id: 2,
@@ -53,7 +53,7 @@ export const projects = [
         href: "https://github.com/pauldb09/tutos-du-web",
         imageAlt: "image",
         imageSrc: "/images/tdw.png",
-        desc: "A very complete website for coding tutorials, with account creation and ability to write tutorials. Used to have 200 tutorials written by the community and more than 1000 registred users. ",
+        desc: "A very complete website for writing tutorials. Used to have 200 tutorials written by the community and more than 1000 registred users.",
         tech: "PHP, SQL, Html, Css, VanillaJS, Bootstrap",
     },
 

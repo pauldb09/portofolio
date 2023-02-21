@@ -2,38 +2,24 @@ import { DecoratedText } from "@/components/DecoratedLink";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { words, projects, stats, socialsLinks } from "@/lib/data";
-import { setupApp } from "@/lib/functions";
+import { SetupApp } from "@/lib/functions";
+import { useRouter } from "next/router";
 
 let appLoaded = false;
 export default function Example() {
     const [currentWord, setCurrentWord]: any = useState(words[0]);
-
+    const router = useRouter();
     useEffect(() => {
         if (appLoaded) return;
         appLoaded = true;
-        setupApp(words, currentWord, setCurrentWord);
-    }, [currentWord]);
-
+        SetupApp(words, currentWord, setCurrentWord, router);
+    }, [currentWord, router]);
     return (
-        <main className="bg-black">
-            <div className="mx-auto max-w-7xl py-32 sm:px-6 sm:py-32 lg:px-8">
-                <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
-                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                        <svg className="absolute top-0 left-1/2 -z-10 h-[42.375rem] -translate-x-1/2 blur-3xl xl:-top-6" viewBox="0 0 1155 678" fill="none">
-                            <path
-                                fill="url(#09dbde42-e95c-4b47-a4d6-0c523c2fca9a)"
-                                fillOpacity=".3"
-                                d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-                            />
-                            <defs>
-                                <linearGradient id="09dbde42-e95c-4b47-a4d6-0c523c2fca9a" x1="1155.49" x2="-78.208" y1=".177" y2="474.645" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#15ADE2" />
-                                    <stop offset={1} stopColor="#15ADE2" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
-                        <div className=" relative isolate  bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+        <main className="bg-black ">
+            <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-24 lg:px-8">
+                <div className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32 ">
+                    <div className="mx-auto max-w-7xl ">
+                        <div className=" relative isolate   px-6 pt-16  sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                     {currentWord},
@@ -47,7 +33,7 @@ export default function Example() {
                                         <div key={social.id}>
                                             <Link href={social.link}>
                                                 <img
-                                                    className="hover:cursor-pointer  transition ease-in-out delay-0 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 inline-block inline-block h-12 w-12 rounded-full "
+                                                    className="hover:animate-none transition ease-in-out delay-0 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 inline-block inline-block h-12 w-12 rounded-full "
                                                     src={social.image}
                                                     alt=""
                                                 />
@@ -110,19 +96,20 @@ export default function Example() {
                     </dl>
                 </div>
             </div>
-            <div className="bg-black">
+            <div className="bg-black1">
                 <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8" id="about">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         I've worked on <DecoratedText word={"10+"}></DecoratedText> projects since <DecoratedText word={"2020"}></DecoratedText>
                     </h2>
-                    <br></br>
+                    <p className="mt-6 text-lg leading-8 text-gray">Here are the most interesting ones :)</p>
+                    <br></br> <br></br>
                     <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {projects.map((project) => (
                             <div
                                 key={project.id}
                                 className="group relative transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none hover:cursor-pointer"
                             >
-                                <div className="min-h-40 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                                <div className="min-h-40 max-h-48 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
                                     <img src={project.imageSrc} alt={project.imageAlt} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
                                 </div>
                                 <div className="mt-4 flex justify-between hover:bg-black3 bg-black2 px-2 py-2 rounded-lg mt-1">
@@ -186,19 +173,6 @@ export default function Example() {
                         </dl>
                     </div>
                 </div>
-                <svg className="absolute top-0 left-1/2 -z-10 h-[42.375rem] -translate-x-1/2 blur-3xl xl:-top-6" viewBox="0 0 1155 678" fill="none">
-                    <path
-                        fill="url(#09dbde42-e95c-4b47-a4d6-0c523c2fca9a)"
-                        fillOpacity=".3"
-                        d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-                    />
-                    <defs>
-                        <linearGradient id="09dbde42-e95c-4b47-a4d6-0c523c2fca9a" x1="1155.49" x2="-78.208" y1=".177" y2="474.645" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#15ADE2" />
-                            <stop offset={1} stopColor="#15ADE2" />
-                        </linearGradient>
-                    </defs>
-                </svg>
             </div>
         </main>
     );
