@@ -27,7 +27,7 @@ export default function Example() {
                                     <span className="text-3xl font-bold tracking-tight text-gray sm:text-4xl">Error 501</span>
                                     <br></br>
                                     <br></br>
-                                    You have been blocked from accessing <DecoratedText link={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"} word={site}></DecoratedText>
+                                    You have been blocked from accessing <DecoratedText link={site} word={site}></DecoratedText>
                                 </h2>
                                 <p className="mt-6 text-lg leading-8 text-gray">
                                     Your ip adress has been flagged as suspicous by our anti bot algorithm, please wait a few minutes or contact the site owner

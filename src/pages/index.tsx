@@ -12,8 +12,10 @@ export default function Example() {
     useEffect(() => {
         if (appLoaded) return;
         appLoaded = true;
-        SetupApp(words, currentWord, setCurrentWord, router);
+        const appData = SetupApp(words, currentWord, setCurrentWord, router);
     }, [currentWord, router]);
+
+
     return (
         <main className="bg-black ">
             <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-24 lg:px-8">
