@@ -4,7 +4,7 @@ import MetaTags from "@/components/Sections/MetaTags";
 
 const metaData = {
     title: "Pauldb09 - Portofolio",
-    description: "👀👀🤔🤔🤔",
+    description: "Greetings stranger! This is just a website to introduce myseflf! Hope it finds you well!",
     url: "https://www.pauldb09.dev",
     image: "https://www.pauldb09.dev/avatar.gif",
     themeColor: "#15ADE2",

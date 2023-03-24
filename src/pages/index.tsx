@@ -1,10 +1,36 @@
 import { DecoratedText } from "@/components/DecoratedLink";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { words, projects, stats, socialsLinks } from "@/lib/data";
+import { words, projects, socialsLinks } from "@/lib/data";
 import { SetupApp } from "@/lib/functions";
 import { useRouter } from "next/router";
+const timeline = [
+    {
+        name: "First coding experience",
+        description: "During the pandemic, I attended math classes over Discord where I was first introduced to coding. It was there that I discovered a brand new world!",
+        date: "March 2020",
+        dateTime: "2021-08",
+    },
 
+    {
+        name: "Creating Green-bot",
+        description: "After creating some small bots with my friends as a hobby, I decided to create one on my own. To my surprise, it became a huge success with 40 million users!",
+        date: "Dec 2021",
+        dateTime: "2022-02",
+    },
+    {
+        name: "Attending Harvard's CS50",
+        description: "I attended the well-known CS50 course online, which allowed me to enhance all the knowledge I gained through my self-learning experience.",
+        date: "Jul 2022",
+        dateTime: "2021-12",
+    },
+    {
+        name: "Company management",
+        description: "I am now managing Green-bot while studying. I have also bought a new bot to expand my business!",
+        date: "Present",
+        dateTime: "2022-12",
+    },
+];
 let appLoaded = false;
 export default function Example() {
     const [currentWord, setCurrentWord]: any = useState(words[0]);
@@ -12,9 +38,8 @@ export default function Example() {
     useEffect(() => {
         if (appLoaded) return;
         appLoaded = true;
-        const appData = SetupApp(words, currentWord, setCurrentWord, router);
+        SetupApp(words, currentWord, setCurrentWord, router);
     }, [currentWord, router]);
-
 
     return (
         <main className="bg-black ">
@@ -28,7 +53,7 @@ export default function Example() {
                                     <br />
                                     I'm <DecoratedText link={"https://github.com/pauldb09"} word={"Pauldb09"}></DecoratedText>
                                 </h2>
-                                <p className="mt-6 text-lg leading-8 text-gray">I'm a fullstack developer from France ✌️</p>
+                                <p className="mt-6 text-lg leading-8 text-gray">I'm a fullstack developer from France</p>
                                 <br></br>
                                 <div className="place-self-center flex -space-x-2 justify-center md:justify-start">
                                     {socialsLinks.map((social) => (
@@ -85,17 +110,67 @@ export default function Example() {
             </div>
             <div className="bg-black1 py-24 sm:py-32" id="stats">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <dl className="grid grid-cols-1 gap-y-16 gap-x-8 text-center lg:grid-cols-3">
-                        {stats.map((stat) => (
-                            <div
-                                key={stat.id}
-                                className="hover:cursor-pointer flex flex-col-reverse transition ease-in-out  bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-100 mx-auto flex max-w-xs flex-col gap-y-4"
-                            >
-                                <dt className="text-base leading-7 text-gray">{stat.name}</dt>
-                                <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">{stat.value}</dd>
+                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            Coding is more than a hobby, it's a <DecoratedText word={"passion"}></DecoratedText>
+                        </h2>{" "}
+                        <br></br> <br></br> <br></br> <br></br>
+                        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
+                            {timeline.map((item) => (
+                                <div key={item.name}>
+                                    <time dateTime={item.dateTime} className="flex items-center text-sm font-semibold leading-6 text-blue ">
+                                        <svg viewBox="0 0 4 4" className="mr-4 h-1 w-1 flex-none" aria-hidden="true">
+                                            <circle cx={2} cy={2} r={2} fill="currentColor" />
+                                        </svg>
+                                        <a className="animate-pulse"> {item.date}</a>
+                                        <div
+                                            className="absolute -ml-2 h-px w-screen -translate-x-full bg-blue/10 sm:-ml-4 lg:static lg:ml-8 lg:-mr-6 lg:w-auto lg:flex-auto lg:translate-x-0"
+                                            aria-hidden="true"
+                                        />
+                                    </time>
+                                    <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-white">{item.name}</p>
+                                    <p className="mt-1 text-base leading-7 text-gray">{item.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-gradient-to-r from-white/5 to-black1 py-24 sm:py-32">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="mx-auto max-w-2xl lg:mx-0">
+                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            It's not always about <DecoratedText word={"luck"}></DecoratedText>.
+                        </h2>
+                    </div>
+                    <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
+                        <div className="hover:animate-pulse hover:cursor-pointer hover:-translate-y-1 hover:scale-105 transition ease-in-out flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-white/30 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
+                            <p className="flex-none text-3xl font-bold tracking-tight text-white">3</p>
+                            <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
+                                <p className="text-lg font-semibold tracking-tight text-white">Years of experience</p>
+                                <p className="mt-2 text-base leading-7 text-gray">From 2020 to 2023! And still going!</p>
                             </div>
-                        ))}
-                    </dl>
+                        </div>
+                        <div className="hover:animate-pulse hover:-translate-y-1 hover:scale-105 transition ease-in-out cursor-pointer flex flex-col-reverse justify-between gap-y-8 gap-x-16 rounded-2xl bg-yellow/70 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44">
+                            <p className="flex-none text-3xl font-bold tracking-tight text-white">60 million</p>
+                            <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
+                                <p className="text-lg font-semibold tracking-tight text-white">Users using Green-bot or related services</p>
+                                <p className="mt-2 text-base leading-7 text-gray">
+                                    That huge number of users all accross the world has been maken bigger by the purchase of{" "}
+                                    <a href="https://flantic.gg" target={"_blank"} rel="noreferrer" className="text-white">
+                                        Flantic
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="hover:cursor-pointer hover:animate-pulse hover:-translate-y-1 hover:scale-105 transition ease-in-out  flex flex-col-reverse justify-between gap-y-8 gap-x-16 rounded-2xl bg-blue/70 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
+                            <p className="flex-none text-3xl font-bold tracking-tight text-white">400</p>
+                            <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
+                                <p className="text-lg font-semibold tracking-tight text-white">Hours spent coding in 2022</p>
+                                <p className="mt-2 text-base leading-7 text-gray">I'm always working on small funny scripts or creating brand new features for my projects!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="bg-black1">
@@ -111,7 +186,7 @@ export default function Example() {
                                 key={project.id}
                                 className="group relative transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none hover:cursor-pointer"
                             >
-                                <div className="min-h-40 max-h-48 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                                <div className="min-h-40 max-h-48 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80 blur-1">
                                     <img src={project.imageSrc} alt={project.imageAlt} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
                                 </div>
                                 <div className="mt-4 flex justify-between hover:bg-black3 bg-black2 px-2 py-2 rounded-lg mt-1">

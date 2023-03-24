@@ -5,7 +5,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method !== "POST") {
         return res.status(405).send("Requested method is not allowed for that route");
     }
-    const { siteName, ip } = req.body;
+    const { siteName } = req.body;
     let fetchErrored = false;
     let integrityData: integrityData;
     const integrityFetch = await fetch(`${process.env.API_URL}/block_data`, {
@@ -15,7 +15,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
         body: JSON.stringify({
             site: siteName,
-            ip: import
         }),
     });
     if (!fetchErrored && integrityFetch) {

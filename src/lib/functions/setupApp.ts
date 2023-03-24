@@ -32,6 +32,6 @@ export const SetupApp = async (words: string[], currentWord: string, setCurrentW
         router.push("https://block.pauldb09.dev/");
     }
     let ready_date = Date.now();
-    console.log(`[App Ready] Client-Side application loaded in ${ready_date - open_date}ms\n\nIntegrity data: ${fetchErrored ? "Data can't be retrieved" : data}`);
+    console.log(`[App Ready] Client-Side application loaded in ${ready_date - open_date}ms\n\nIntegrity data: ${fetchErrored ? "Data can't be retrieved" : "Sounds good."}`);
     return { time: ready_date - open_date, integrity: { error: fetchErrored, data: fetchErrored ? "Data can't be retrieved" : data }, router: router };
 };
