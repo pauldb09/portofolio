@@ -36,7 +36,7 @@ export const projects = [
         imageSrc: "/images/greenbot.png",
         imageAlt: "image",
         tech: "Typescript, MongoDB, NextJS, Kotlin, Java",
-        desc: "I founded Green-bot back in 2020 as a hobby and now it's serving more than 30 millions users worldwide on 500,000 separate discord communities!",
+        desc: "I founded Green-bot in 2020 and now it's serving more than 60 millions users worldwide on 700,000 separate discord communities!",
     },
     {
         id: 2,
@@ -63,7 +63,7 @@ export const projects = [
         href: "https://github.com/pauldb09",
         imageAlt: "image",
         imageSrc: "/images/github-octocat.png",
-        desc: "I've also made several open source projects or scripts on my github profile",
+        desc: "I've also made several open source projects or scripts on my github profile. This website is also open sourced!",
         tech: "Javascript, Typescript, ExpressJS, mongoDB",
     },
 ];
