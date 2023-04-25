@@ -4,11 +4,11 @@ import MetaTags from "@/components/Sections/MetaTags";
 
 const metaData = {
     title: "Pauldb09 - Portofolio",
-    description: "Greetings stranger! This is just a website to introduce myseflf! Hope it finds you well!",
+    description: "Hey! I'm Pauldb09, a fullstack developer working on several projects online, i've created this website to introduce myself",
     url: "https://www.pauldb09.dev",
-    image: "https://www.pauldb09.dev/avatar.gif",
+    image: null,
     themeColor: "#15ADE2",
-    keywords: "key1, key2, key3, key4, key5, key6",
+    keywords: "paul, dev, ",
     author: "Pauldb09",
     charSet: "utf-8",
     language: "English",

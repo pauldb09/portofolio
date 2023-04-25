@@ -40,12 +40,12 @@ export const projects = [
     },
     {
         id: 2,
-        name: "Social Manager",
-        href: "https://github.com/pauldb09/Social-Manager",
-        imageSrc: "/images/socialmanager.png",
+        name: "Flantic",
+        href: "https://flantic.gg",
+        imageSrc: "/images/flantic.png",
         imageAlt: "image",
-        desc: "Another discord that sends messages when a new youtube video/tweet/tiktok is posted. Also helped to moderate online communities ( Some of the biggest). Stopped due to lack of time",
-        tech: "Typescript, MongoDB",
+        desc: "Manage everything in your discord server thanks to Flantic! From security to fun features! This bot has been acquired in early 2023 to enlarge Green-bot's buisness",
+        tech: "Python, SQL, NextJS, Prisma",
     },
     {
         id: 3,
